@@ -1,0 +1,23 @@
+{
+  "name": "music_forward",
+  "version": "1.0.0",
+  "description": "Social media hub for musicians to market their art",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatrickPowers777/Music_Forward.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PatrickPowers777/Music_Forward/issues"
+  },
+  "homepage": "https://github.com/PatrickPowers777/Music_Forward#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
