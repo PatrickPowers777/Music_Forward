@@ -20,22 +20,37 @@ Milestones:
     b. requirements: read as much of the ionic documentation as possible
 
     Sprint 1: 
+    
     Complexity 1: Set up a server. 
+    
     Complexity 2: Read Spotify documentation. 
+    
     Complexity 3: Render a page with a spotify playlist, of any kind.
+    
     Complexity 5: Start learning Angular.
+    
     Complexity 2: Read Twitter and Facebook documentation. 
+    
     Complexity 3: Create an MVC framework with multiple pages including a sign in page which includes
     OAuth functionality for social media authentication.
+    
     Complexity 3: Create and finish front-end style(css, possibly sass in next sprint)
+    
     Complexity 5: Start learning typescript.
 
 
     Backlog: 
+    
     Complexity 1: Find useful icons for front end design.
+    
     Complexity 1: Decide on color scheme.
+    
     Complexity 1: Create app for spotify and grab access token/secret.
+    
     Complexity 3: Test oAuth functionality for spotify.
+    
     Complexity 2: Test playlist functionality.
+    
     Complexity 3: Test sign-in page
+    
     Complexity 8: Create and test demo page for angular version of the site
