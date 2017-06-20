@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/PatrickPowers777/Music_Forward#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "path": "^0.12.7"
   }
 }
