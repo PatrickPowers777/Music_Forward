@@ -1,29 +1,33 @@
 var express = require("express");
+var bodyParser = require("body-parser");
 var mongoose = require('mongoose');
 var port = process.env.PORT || 3000;
 var app = express();
 var path = require('path');
+var exphbs = require('express-handlebars');
 
+mongoose.promise = Promise;
+
+var members = require('./models/db.js');
 
 
 app.use(express.static('./public'));
+app.use(express.static('./public/css'));
+app.use(express.static('./public/javascript'));
 
-app.get("/", function(req, res){
-	res.sendFile(path.resolve(__dirname, './public/sign-in.html'));
-});
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-app.get("/home", function(req, res){
-	res.sendFile(path.resolve(__dirname, './public/home.html'));
-});
+require('./routes/html-routes.js')(app);
 
 var db = process.env.MONGODB_URI || "mongodb://localhost/music-forward";
 
 mongoose.connect(db, function(error) {
-  // Log any errors connecting with mongoose
+ 
   if (error) {
     console.log(error);
   }
-  // Or log a success message
+
   else {
     console.log("mongoose connection is successful");
   }

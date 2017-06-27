@@ -1,3 +1,5 @@
+
+
 $(function() {
 
     $('#login-form-link').click(function(e) {
@@ -16,3 +18,10 @@ $(function() {
 	});
 
 });
+
+$(document).on('click', '#register-submit', memberAdd);
+
+function memberAdd() {
+	$.get("/api/members")
+}
+
