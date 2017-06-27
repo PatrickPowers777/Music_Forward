@@ -23,5 +23,8 @@ $(document).on('click', '#register-submit', memberAdd);
 
 function memberAdd() {
 	$.get("/api/members")
+		.then(function(data) {
+			console.log(data);
+		})
 }
 
