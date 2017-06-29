@@ -8,6 +8,19 @@ var Schema = mongoose.Schema;
 //setting up database
 
 var database = new Schema ({
+  userName: {
+    type: String,
+    trim: true,
+    unique: true,
+    required: 'Please create a user name',
+    validate: [
+    function(input) {
+      return input.length >=8;
+    },
+    "User name should be at least 8 characters"
+    ]
+  },
+
 	email: {
     type: String,
     unique: true,
@@ -32,6 +45,6 @@ var database = new Schema ({
 
 });
 
-var Member = mongoose.model("member", database);
+var Member = mongoose.model("members", database);
 
 module.exports = Member;

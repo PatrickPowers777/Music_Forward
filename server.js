@@ -1,24 +1,28 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require('mongoose');
-var port = process.env.PORT || 3000;
-var app = express();
-var path = require('path');
 var exphbs = require('express-handlebars');
 
-mongoose.promise = Promise;
+var port = process.env.PORT || 3000;
 
-var members = require('./models/db.js');
+var app = express();
 
+var router = express.Router();
+
+require('./config/routes')(router);
 
 app.use(express.static('./public'));
-app.use(express.static('./public/css'));
-app.use(express.static('./public/javascript'));
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-require('./routes/html-routes.js')(app);
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+
+app.use(router);
+
+mongoose.promise = Promise;
 
 var db = process.env.MONGODB_URI || "mongodb://localhost/music-forward";
 

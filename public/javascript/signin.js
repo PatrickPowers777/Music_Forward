@@ -19,12 +19,35 @@ $(function() {
 
 });
 
-$(document).on('click', '#register-submit', memberAdd);
+$(document).on('submit', '#register-form', memberAdd);
 
-function memberAdd() {
-	$.get("/api/members")
-		.then(function(data) {
-			console.log(data);
-		})
+function memberAdd(event) {
+	
+	event.preventDefault();
+	console.log("Something stupid")
+	var userName = $("#username2").val().trim();
+	var email = $("#email2").val().trim();
+	var password = $("#password2").val().trim();
+
+	// console.log(userName, email, password);
+
+	if(userName && email && password) {
+
+		var memberObj = {
+			userName: userName,
+			email: email,
+			password: password
+		}
+
+
+		$.post("/api/members", memberObj)
+			.then(function(data) {
+				console.log(data);
+			})
+	} else {
+		alert("Please enter a valid username, email, and password");
+	}
+
+	return false;
 }
 
